@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balada & Co. US | official website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="balada.png" type="image/png">
+<style>
+        @font-face {
+            font-family: 'FUTURA55REGULAR';
+            src: url('C:/Users/User/Downloads/FUTURA55REGULAR.TTF') format('truetype'); /* Caminho para a fonte .ttf */
+        }
+        @font-face {
+            font-family: 'Intrepid';
+            src: url('C:/Users/User/Downloads/Intrepid.ttf') format('truetype'); /* Caminho para a fonte .ttf */
+        }
+
+        body {
+            font-family: 'FUTURA55REGULAR', Arial, sans-serif; /* Use Futura Regular como fonte padrão */
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            letter-spacing: .025rem;
+            line-height: 1.5rem;
+            overflow-x: hidden; /* Para esconder o menu lateral quando fechado */
+        }
+
+        header {
+    position: fixed; /* Torna o cabeçalho fixo */
+    top: 0; /* Fixa o cabeçalho no topo da página */
+    width: 100%; /* Garante que o cabeçalho ocupe toda a largura da tela */
+    background-color: white; /* Adapte a cor de fundo conforme necessário */
+    color: #000000; /* Cor do texto */
+    padding: 40px;
+    text-align: center;
+    font-family: 'Intrepid', Arial, sans-serif;
+    z-index: 999; /* Garante que o cabeçalho esteja sempre na parte superior */
+}
+
+        header:hover {
+        background-color: #e7b2a4;
+        color: #c0c0c0;
+    }
+
+/* Estilize o ícone da pessoa */
+header #login {
+    color: #000000; /* Cor inicial do ícone */
+}
+
+        .topics-bar { 
+            color: #000000; /* Preto */
+        }
+
+        .topics-bar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center; /* Centraliza os links */
+        }
+
+        .topics-bar ul li {
+            display: inline;
+            margin-right: 150px;
+        }
+
+        .topics-bar ul li a {
+    color: #000000; /* Altera a cor do texto do hyperlink para preto */
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-weight: 400;
+    letter-spacing: .023rem;
+    line-height: 1rem;
+}
+
+.topics-bar ul li a:hover {
+    text-decoration: none;
+    color: #000000;
+}
+
+.topics-bar ul li a:visited {
+    color: #000000; /* Altera a cor do hyperlink visitado para preto */
+}
+
+
+        main {
+            padding: 10px;
+            padding-bottom: 50px; 
+        }
+
+        .destaque {
+            margin-bottom: 20px;
+        }
+
+        footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: #ffffff;
+    text-align: center;
+    padding: 1px 0;
+    font-size: 18px;
+    height: 50px;
+}
+
+        /* Estilos para o menu lateral */
+        .menu-container {
+            position: fixed;
+            top: 0;
+            left: -675px; /* Esconde o menu inicialmente */
+            width: 33%;
+            height: 100%;
+            background-color: #ffffff;
+            transition: left 0.3s ease;
+            z-index: 10000;
+        }
+        .menu-container1 {
+    position: fixed;
+    top: 0;
+    right: -690px;
+    width: 50%;
+    height: 100%;
+    background-color: #ffffff;
+    transition: right 0.3s ease;
+    overflow-y: scroll; /* Adiciona uma barra de rolagem vertical */
+    z-index: 900;
+}
+
+
+        .menu-content {
+            padding: 20px;
+            color: #ffffff;
+            position: absolute;
+            top: 90px;
+        }
+
+        .menu-content1 {
+            font-family: 'FUTURA55REGULAR', Arial, sans-serif; /* Adiciona a mesma fonte do corpo */
+            padding: 20px;
+            color: #ffffff;
+            position: absolute;
+            top: 90px;
+            right: 475px;   
+        }
+
+        .menu-content ul {
+    list-style-type: none; /* Remove os marcadores de lista */
+}
+.menu-content1 ul {
+    list-style-type: none; /* Remove os marcadores de lista */
+}
+
+        .menu-content ul li  {
+    color: #000000;
+    text-decoration: none;
+    position: relative; /* Adiciona posição relativa para o link */
+    margin-bottom: 27px; /* Adiciona espaço vertical entre os itens do menu */
+    font-size: 26px;
+}
+.menu-content1 ul li  {
+    color: #000000;
+    text-decoration: none;
+    position: relative; /* Adiciona posição relativa para o link */
+    margin-bottom: 27px; /* Adiciona espaço vertical entre os itens do menu */
+    font-size: 26px;
+}
+        .menu-content ul li a {
+    color: #000000;
+    text-decoration: none;
+    position: relative; /* Adiciona posição relativa para o link */
+}
+.menu-content1 ul li a {
+    color: #000000;
+    text-decoration: none;
+    position: relative; /* Adiciona posição relativa para o link */
+}
+
+.menu-content ul li a::before {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0; 
+    background-color: #000000;
+    transition: width 0.3s; /* Adiciona uma transição suave na largura */
+}
+.menu-content1 ul li a::before {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    right: 0; 
+    background-color: #000000;
+    transition: width 0.3s; /* Adiciona uma transição suave na largura */
+}
+
+.menu-content ul li a:hover::before {
+    width: 100%; /* Aumenta a largura para 100% ao passar o mouse */
+}
+.menu-content1 ul li a:hover::before {
+    width: 100%; /* Aumenta a largura para 100% ao passar o mouse */
+}
+        .menu-button {
+            position: fixed;
+            top: 5.5%;
+            left: 3.3%;
+            cursor: pointer;
+            z-index: 10001;
+        }
+
+        .menu-button1 {
+            position: fixed;
+            top: 85px;
+            right: 5px;
+            cursor: pointer;
+            z-index: 999;
+        }
+
+        .menu-icon {
+            width: 1rem;
+            height: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .menu-icon-line {
+            width: 100%;
+            height: 2px;
+            background-color: rgb(24, 24, 24)
+        }
+        
+.menu-button span {
+    position: absolute; /* Permite usar propriedades de posicionamento */
+    top: -25%;
+    left: 200%;
+    font-size: .875rem;
+    letter-spacing: .023rem;
+}
+.menu-button1 span {
+    position: absolute; /* Permite usar propriedades de posicionamento */
+    top: -25%;
+    right: 200%;
+    font-size: .875rem;
+    letter-spacing: .023rem;
+}
+/* Adicione transição para suavizar a mudança de ícone e texto */
+.menu-icon, .menu-icon-line {
+    transition: transform 0.3s ease;
+}
+.menu-icon1, .menu-icon-line1 {
+    transition: transform 0.3s ease;
+}
+
+/* Estilize o texto do menu */
+.menu-button span {
+    position: relative;
+    top: -21px;
+    left: 35px;
+}
+
+.menu-button1 span {
+    position: relative;
+    top: -21px;
+    right: 35px;
+}
+/* Estilo para o ícone do "X" */
+.menu-icon.open .menu-icon-line:nth-child(1) {
+    transform: rotate(45deg) translate(3px, 3px);
+}
+
+/* Estilo para o ícone do "X" */
+.menu-icon.open .menu-icon-line:nth-child(2) {
+    transform: rotate(-45deg) translate(2px, -2px);
+}
+
+/* Estilo para o ícone do "X" */
+.menu-icon.open .menu-icon-line:nth-child(3) {
+    opacity: 0;
+}
+
+#login {
+    height: 1rem;
+    width: 1rem;
+    position: fixed;
+    right: 8%;
+    top: 5.5%;
+}
+
+body.overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* Define o fundo escuro com uma certa transparência */
+    position: relative;
+    overflow: hidden; /* Impede que o usuário role a página enquanto o menu estiver aberto */
+}
+
+body.overlay main::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Cor do overlay escuro */
+    z-index: 900; /* Ajuste o z-index para que o overlay fique abaixo do header */
+}
+
+body.overlay header {
+    background-color: rgba(0, 0, 0, 0.65); /* Preto com opacidade */
+    z-index: -1000;
+}
+body.overlay footer {
+    background-color: rgba(0, 0, 0, 0.65); /* Preto com opacidade */
+    color: rgba(0, 0, 0, 0.65);
+}
+.forms-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.signin-signup {
+  position: absolute;
+  top: 7rem;
+  transform: translate(-50%, -50%);
+  left: 75%;
+  width: 50%;
+  transition: 1s 0.7s ease-in-out;
+  display: grid;
+  grid-template-columns: 1fr;
+  z-index: 5;
+}
+
+.input-field {
+  max-width: 6000px; /* Aumenta o valor para deixar o retângulo mais largo */
+  width: 100%;
+  background-color: #ffffff;
+  margin: 10px 0;
+  height: 55px;
+  border-radius: 10px; /* Alterando o valor para criar bordas retangulares */
+  padding: 0 0.4rem;
+  position: relative;
+  top: 12rem;
+  right: 4rem;
+}
+
+.input-field:hover {
+  border: 1px solid #333; /* Adiciona um contorno preto ao redor do retângulo */
+}
+
+.input-field i {
+  text-align: center;
+  line-height: 55px;
+  color: #770808;
+  transition: 0.5s;
+  font-size: 1.1rem;
+}
+
+.input-field input {
+  background: none;
+  outline: none;
+  border: none;
+  line-height: 1;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.input-field input::placeholder {
+  color: #aaa;
+  font-weight: 500;
+}
+.title {
+  font-size: 2.2rem;
+  color: #ffffff;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.btn {
+  width: 450px;
+  border: none;
+  outline: none;
+  height: 45px;
+  border-radius: 45px;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin: 10px 0;
+  cursor: pointer;
+  position: relative;
+  right: 5rem;
+  top: 13rem;
+  background-color: #e7b2a4; /* Cor de fundo padrão */
+  border: 2px solid transparent; /* Contorno transparente */
+transition: background-color 0.3s, border-color 0.3s; /* Transições suaves */
+}
+.btn:hover {
+    background-color: #ffffff; /* Cor de fundo ao passar o mouse */
+    border-color: #e7b2a4; /* Cor do contorno ao passar o mouse */
+    color: #000000;
+}
+
+.sign-in-form .title,
+.sign-in-form .input-field input,
+.sign-in-form .input-field input::placeholder,
+.sign-in-form .btn {
+  font-family: inherit; /* Herda a fonte do body */
+}
+.forgot-password {
+    font-size: 0.9rem; /* Tamanho da fonte */
+    color: #555; /* Cor do texto */
+    display: block; /* Para que o texto seja exibido como um bloco */
+    margin-top: 5px; /* Espaçamento superior */
+    position: relative;
+    top: 11.5rem;
+    right: 4rem;
+    text-decoration: underline;
+}
+
+#conta1 {
+    font-size: 18px; /* Tamanho da fonte */
+    color: #333; /* Cor do texto */
+    position: relative;
+    top: 1.8rem;
+    right: 4rem;
+    white-space: nowrap; /* Evita que o texto seja quebrado verticalmente */
+}
+
+#conta2 {
+    font-size: 18px; /* Tamanho da fonte */
+    color: #333; /* Cor do texto */
+    position: relative;
+    top: 18rem;
+    right: 5rem;
+    white-space: nowrap; /* Evita que o texto seja quebrado verticalmente */
+}
+
+.container {
+    overflow-y: visible;
+}
+
+.additional-text {
+    position: relative; /* Altere de "absolute" para "relative" */
+    top: 17rem; /* Ajuste a posição vertical conforme necessário */
+    right: 5rem;
+    color: #333;
+    word-wrap: nowrap; /* Permite que o texto seja quebrado em várias linhas, caso necessário */
+}
+
+
+.rectangle {
+    position: absolute;
+    top: -100px; /* Ajuste conforme necessário */
+    right: -62rem; /* Ajuste conforme necessário */
+    width: 100.2rem;
+    height: 8rem; /* Altura do retângulo */
+    background-color: #ffffff; /* Cor branca */
+    z-index: -1; /* Para colocar atrás do conteúdo da barra de menu */
+}
+
+.additional-text .btn {
+  width: 460px;
+  border: none;
+  outline: none;
+  height: 45px;
+  border-radius: 45px;
+  color: #000000;
+  text-transform: uppercase;
+  margin: 10px 0;
+  cursor: pointer;
+  position: relative;
+  right: 0.4rem;
+  top: 0.5rem;
+  background-color: #ffffff; /* Cor de fundo padrão */
+  border: 2px solid #e7b2a4; /* Contorno transparente */
+ transition: background-color 0.3s, border-color 0.3s; /* Transições suaves */
+}
+.additional-text .btn:hover {
+    background-color: #e7b2a4; /* Cor de fundo ao passar o mouse */
+    border-color: #ffffff; /* Cor do contorno ao passar o mouse */
+    color: #ffffff;
+}
+
+.menu-content1 form,
+    .menu-content1 input[type="text"],
+    .menu-content1 input[type="password"],
+    .menu-content1 .forgot-password,
+    .menu-content1 .additional-text p,
+    .menu-content1 .additional-text .btn {
+        font-family: 'FUTURA55REGULAR', Arial, sans-serif; /* Adiciona a mesma fonte do corpo */
+    }
+    
+    #lv {
+letter-spacing: 1.8px;
+    }
+    .menu-container2 {
+            position: fixed;
+            top: 0;
+            right: -675px; /* Inicia oculto */
+            width: 33%;
+            height: 100%;
+            background-color: #ffffff;
+            transition: right 0.3s ease; /* Transição para suavizar o movimento */
+            z-index: 10000;
+        }
+
+        .menu-content2 {
+            padding: 20px;
+            color: #000000;
+            position: absolute;
+            top: 20px;
+        }
+
+        .menu-content2 ul {
+            list-style-type: none;
+        }
+
+        .menu-content2 ul li {
+            margin-bottom: 27px;
+            font-size: 26px;
+        }
+
+        .menu-content2 ul li a {
+            color: #000000;
+            text-decoration: none;
+            position: relative;
+        }
+
+        .menu-content2 ul li a::before {
+            content: '';
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            bottom: 0;
+            right: 0; 
+            background-color: #000000;
+            transition: width 0.3s;
+        }
+
+        .menu-content2 ul li a:hover::before {
+            width: 100%;
+        }
+
+        .menu-button2 {
+            position: fixed;
+            top: 85px;
+            right: 5px;
+            cursor: pointer;
+            z-index: 999;
+        }
+
+        .menu-icon2 {
+            width: 1rem;
+            height: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .menu-icon-line2 {
+            width: 100%;
+            height: 2px;
+            background-color: rgb(24, 24, 24)
+        }
+        .turma {
+            font-size: 20px;    
+        }
+
+        #logo {
+    position: fixed;
+    height: 100px;
+    top: 7%; /* Move o topo do elemento para o centro vertical */
+    left: 50%; /* Move a esquerda do elemento para o centro horizontal */
+    transform: translate(-50%, -50%); /* Move o elemento de volta metade de sua própria largura e metade de sua própria altura */
+        }
+        #lvair {
+    position: relative;
+    top: 3.7rem;
+    left: -1.3rem;
+    display: block;
+    width: 104%; /* Define a largura da imagem como 100% */
+    height: auto; /* Mantém a proporção da imagem */
+    max-height: calc(90vh - 90px); /* Define a altura máxima da imagem */
+    object-fit: cover; /* Faz com que a imagem cubra o contêiner mantendo sua proporção */
+}
+
+#minhaconta {
+    position: relative;
+    z-index: 2000002;
+    top: -3px;
+    right: 450px;
+    font-size: 18px;
+}
+
+#btexto1 {
+    text-align: center;
+
+}
+
+#btexto2 {
+    text-align: center;
+}
+
+#fnafbonnie {
+    position: relative;
+    left: 4.5rem;
+    width: 350px;
+    margin-bottom: 20px;
+}
+
+#fnaffreddy {
+    position: relative;
+    left: 9rem;
+    width: 350px;
+    margin-bottom: 20px;
+}
+
+#fnafchica {
+    position: relative;
+    left: 13.5rem;
+    width: 350px;
+    margin-bottom: 20px;
+}
+
+#whiteaf1 {
+    position: relative;
+    left: 1.5rem;
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+#chicagoaj1 {
+    position: relative;
+    left: 3rem;
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+#allblackj1 {
+    position: relative;
+    left: 4.5rem;
+    width: 300px;
+    margin-bottom: 20px;
+} 
+
+#pandadunk {
+    position: relative;
+    left: 6rem;
+    width: 300px;
+    margin-bottom: 20px;
+} 
+
+#allcollection {
+color: #6b6b6b;
+position: relative;
+left: 5rem;
+margin-bottom: 20px;
+}
+
+</style>
+</head>
+<body>
+    <header>
+        <img src="baladaandco.png" alt="logo" id="logo">
+        <span id="login" onclick="toggleMenu1()" onmouseenter="this.style.cursor='pointer'">
+            <i class="fas fa-user fa-lg"></i> <!-- Tamanho duas vezes maior -->
+        </span>
+                
+    </header>
+
+    <main>
+           <img src="lvaf1.jpg" alt="lv air force" id="lvair">
+           <br><br> <br><br> <br><br> <br>
+           <h1 id="btexto1">EXPLORE THE NEW AND EXCLUSIVE FIVE NIGHTS AT FREDDY'S AIR FORCE 1 COLLECTION</h1>
+           <br><br> <br><br> <br> 
+           <h4 id="allcollection">See all collection</h4>
+           <img src="FNAFbonnie.jpeg" alt="bonnieaf1" id="fnafbonnie">
+           <img src="FNAFfreddy.jpeg" alt="bonnieaf1" id="fnaffreddy">
+           <img src="FNAFchica.jpeg" alt="bonnieaf1" id="fnafchica">
+           <br><br> <br><br> <br> 
+           <h1 id="btexto2">THE CLASSICS</h1>
+           <br>
+           <img src="af1.jpeg" alt="af1" id="whiteaf1">
+           <img src="j1chicago.jpeg" alt="chicago" id="chicagoaj1">
+           <img src="j1allblack.jpeg" alt="blackaj1" id="allblackj1">
+           <img src="dunkpanda.jpeg" alt="panda" id="pandadunk">
+    </main>
+
+    <footer>
+        <p>&copy;B&CO.2024</p>
+    </footer>
+
+    <div class="menu-button" onclick="toggleMenu()">
+        <div class="menu-icon" id="menu-icon">
+            <div class="menu-icon-line"></div>
+            <div class="menu-icon-line"></div>
+            <div class="menu-icon-line"></div>
+        </div>
+        <span id="menu-text">Menu</span>
+    </div>
+
+<!-- Menu lateral -->
+<div class="menu-container" id="menu">
+    <div class="menu-content">
+        <ul>
+            <li><a href="https://jornalsf.github.io/cultura/" style="color: #000000;">Nike</a></li>
+            <li><a href="https://jornalsf.github.io/error/" style="color: #000000;">Off-White™</a></li>
+            <li><a href="https://jornalsf.github.io/error/" style="color: #000000;">LOUIS VUITTON</a></li>
+            <li><a href="https://jornalsf.github.io/error/" style="color: #000000;">DIOR</a></li>
+            <li><a href="https://jornalsf.github.io/error/" style="color: #000000;">Tiffany & Co.</a></li>
+            <li><a href="https://jornalsf.github.io/error/" style="color: #000000;">FNAF Collection</a></li>
+            <li><a href="#" style="color: #000000;" onclick="toggleMenu2()"><i class="fas fa-arrow-right" style= "color: #4b4b4b; position: absolute; left: 20rem;"></i>Jordan</a></li> <!-- Adicionando um ícone de seta ao lado de "Tipo4" -->
+        </ul>
+        
+    </div>
+</div>
+
+
+<div class="menu-button1" onclick="closeMenu1()">
+    <div class="menu-icon1" id="menu-icon1">
+        <div class="menu-icon-line1"></div>
+        <div class="menu-icon-line1"></div>
+        <div class="menu-icon-line1"></div>
+    </div>
+    <span id="close-menu" style="display: none;">
+        <i class="fas fa-times" style="font-size: 20px;"></i>
+        <span id="minhaconta">Minha Conta</span>
+        <div class="rectangle"></div>
+    </span>
+</div>
+
+    
+<div class="menu-container1" id="menu1">
+    <div class="menu-content1">
+        <div class="menu-button1" onclick="closeMenu1()">
+            <div class="menu-icon1" id="menu-icon1">
+                <div class="menu-icon-line1"></div>
+                <div class="menu-icon-line1"></div>
+                <div class="menu-icon-line1"></div>
+            </div>
+            <span id="close-menu" style="display: none;">
+                <i class="fas fa-times" style="font-size: 20px;"></i>
+                <span style="position: relative; z-index: 10003; top: -3px; right: 10px; font-size: 18px;">Minha Conta</span>
+            </span>
+        </div>
+        <div class="forms-container">
+            <h2 id="conta1">Eu já possuo uma conta</h2>
+            <div class="signin-signup">
+                <form action="#" class="sign-in-form" onsubmit="return validateCredentials()">
+                    <div class="input-field">
+                        <input type="text" id="username" placeholder="Login*" />
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="password" placeholder="Senha* " />
+                    </div>
+                    <a target="_blank" href="https://jornalsf.github.io/error/"><span class="forgot-password">Esqueceu sua senha?</span></a>
+                    <!-- Aqui você insere o input para o botão de login -->
+                    <input type="submit" value="Login" class="btn solid" id="login-btn" />
+                </form>
+                <h2 id="conta2">Eu ainda não possuo uma conta</h2>
+                <div class="additional-text">
+                    <p>Aproveite benefícios adicionais e uma experiência mais rica criando uma conta pessoal</p>
+                    <a href="https://jornalsf.github.io/register/"><input type="submit" value="Criar uma Conta" class="btn solid" id="login-btn" /></a>
+                </div>
+            </div>
+            <div id="error-message" style="color: red; white-space: nowrap; position: absolute; top: 15.5rem; right: -4rem; "></div>
+        </div>
+    </div>
+</div>
+
+
+    <div class="menu-container2" id="menu2">
+        <div class="menu-content2">
+            <p class="turma">Jordan collection</p>
+            <br>
+            <ul>
+                <li><a href="https://jornalsf.github.io/network-error/">Air Jordan 1 High</a></li>
+                <li><a href="https://jornalsf.github.io/network-error/">Air Jordan 1 Low</a></li>
+            </ul>
+            <br>
+        </div>
+    </div>
+    
+    <script>
+// Função para abrir e fechar o primeiro menu-container
+function toggleMenu() {
+    var body = document.body;
+    var menu = document.getElementById("menu");
+    var menuIcon = document.getElementById("menu-icon");
+    var menuText = document.getElementById("menu-text");
+
+    if (menu.style.left === "0px") {
+        menu.style.left = "-675px"; // Fecha o menu
+        body.classList.remove("overlay");
+        menu.classList.remove("open");
+        menuIcon.classList.remove("open");
+        menuText.textContent = "Menu";
+
+        // Fecha o menu-container2
+        closeMenu2(); // Chamada para a função closeMenu2()
+    } else {
+        menu.style.left = "0px"; // Abre o menu
+        body.classList.add("overlay");
+        menu.classList.add("open");
+        menuIcon.classList.add("open");
+        menuText.textContent = "Fechar";
+    }
+}
+
+    
+        // Função para abrir e fechar o segundo menu-container
+        function toggleMenu2() {
+            var body = document.body;
+            var menu2 = document.getElementById("menu2");
+            var menuIcon2 = document.getElementById("menu-icon2");
+            var closeButton2 = document.getElementById("close-menu2");
+    
+            if (menu2.style.right === "0px") {
+                menu2.style.right = "-675px"; // Fecha o menu
+                body.classList.remove("overlay");
+                menu2.classList.remove("open");
+                menuIcon2.classList.remove("open");
+                closeButton2.style.display = "none"; // Oculta o botão "X"
+            } else {
+                menu2.style.right = "0px"; // Abre o menu
+                body.classList.add("overlay");
+                menu2.classList.add("open");
+                menuIcon2.classList.add("open");
+                closeButton2.style.display = "block"; // Exibe o botão "X"
+            }
+        }
+    
+        // Função para fechar o segundo menu-container
+        function closeMenu2() {
+            var body = document.body;
+            var menu2 = document.getElementById("menu2");
+            var menuIcon2 = document.getElementById("menu-icon2");
+            var closeButton2 = document.getElementById("close-menu2");
+    
+            menu2.style.right = "-675px"; // Fecha o menu
+            body.classList.remove("overlay");
+            menu2.classList.remove("open");
+            menuIcon2.classList.remove("open");
+            closeButton2.style.display = "none"; // Oculta o botão "X"
+        }
+// Função para fechar os dois menu-containers
+function closeMenus() {
+    var body = document.body;
+    var menu1 = document.getElementById("menu1");
+    var menuIcon1 = document.getElementById("menu-icon1");
+    var closeButton1 = document.getElementById("close-menu");
+
+    menu1.style.right = "-690px"; // Fecha o menu-container1
+    body.classList.remove("overlay");
+    menu1.classList.remove("open");
+    menuIcon1.classList.remove("open");
+    closeButton1.style.display = "none"; // Oculta o botão "X"
+
+    var menu2 = document.getElementById("menu2");
+    var menuIcon2 = document.getElementById("menu-icon2");
+    var closeButton2 = document.getElementById("close-menu2");
+
+    menu2.style.right = "-675px"; // Fecha o menu-container2
+    menu2.classList.remove("open");
+    menuIcon2.classList.remove("open");
+    closeButton2.style.display = "none"; // Oculta o botão "X"
+}
+
+// Função para abrir e fechar o primeiro menu-container
+function toggleMenu1() {
+    var body = document.body;
+    var menu1 = document.getElementById("menu1");
+    var closeButton1 = document.getElementById("close-menu");
+    var errorMessage = document.getElementById("error-message"); // Obtém a referência para a mensagem de erro
+
+    if (menu1.style.right === "0px") {
+        closeMenus();
+    } else {
+        menu1.style.right = "0px"; // Abre o menu
+        body.classList.add("overlay");
+        menu1.classList.add("open");
+        closeButton1.style.display = "block"; // Exibe o botão "X"
+        
+        // Limpa o conteúdo da mensagem de erro
+        errorMessage.innerText = "";
+    }
+}
+
+
+// Função para fechar o menu-container1
+function closeMenu1() {
+    var body = document.body;
+    var menu1 = document.getElementById("menu1");
+    var closeButton = document.getElementById("close-menu");
+
+    menu1.style.right = "-690px"; // Fecha o menu-container1
+    body.classList.remove("overlay");
+    menu1.classList.remove("open");
+    closeButton.style.display = "none"; // Oculta o botão "X"
+}
+
+
+function validateCredentials() {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+
+    // Verifica se o login e a senha estão corretos
+    if (username !== "admin" || password !== "123") {
+        // Exibe mensagem de erro
+        document.getElementById("error-message").innerText = "Login ou senha incorretos.";
+        return false; // Impede o envio do formulário
+    }
+    
+
+    // Se o login e a senha estiverem corretos, o formulário pode ser enviado
+    return true;
+}
+
+</script>
+    
+</body>
+</html>
